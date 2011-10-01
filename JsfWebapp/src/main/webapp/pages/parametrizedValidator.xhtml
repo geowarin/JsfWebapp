@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:az="http://com.aziphael/facelets/components">
+
+<ui:composition template="/layout/default.xhtml">
+
+	<ui:define name="title">viewInScope</ui:define>
+	<ui:define name="body">
+
+		<h1>Validateur paramétrable</h1>
+		
+		<p>
+			Devinez le mot auquel je pense !<br/>
+			Indice : en minuscules.<br/>
+			Le mot gagnat est passé en paramètre au validateur.
+		</p>
+
+		<a4j:form prependId="false">
+			<a4j:queue size="3" ignoreDupResponses="true" />
+			<p>
+				<h:inputText id="guess" value="">
+					<az:parametrizedValidator winningString="hello" />
+					<rich:ajaxValidator event="onkeyup" />
+				</h:inputText>
+			</p>
+			<p>
+				<rich:message for="guess"/>
+			</p>
+		</a4j:form>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

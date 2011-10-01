@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:az="http://com.aziphael/facelets/components">
+
+<ui:composition template="/layout/default.xhtml">
+
+	<ui:define name="title">Titre</ui:define>
+	<ui:define name="body">
+
+		<h1>Vue hors scope</h1>
+
+		<h:panelGroup rendered="#{sessionScope.viewScopedBean eq null}">
+			<h:outputText value="Le bean n'est plus en session. Excellent." />
+		</h:panelGroup>
+		<h:panelGroup rendered="#{sessionScope.viewScopedBean ne null}">
+			<h:outputText value="Oups le bean est toujours en session... doh !" />
+		</h:panelGroup>
+		<hr/>
+		<ul>
+			<li>
+				<h:outputLink value="viewInScope.jsf">
+					<h:outputText value="Revenir dans le scope" />
+				</h:outputLink>
+			</li>
+		</ul>
+
+	</ui:define>
+
+</ui:composition>
+</html>

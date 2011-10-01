@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:az="http://com.aziphael/facelets/components">
+
+<ui:composition template="/layout/default.xhtml">
+
+	<ui:define name="title">OTP</ui:define>
+	<ui:define name="body">
+	
+		<a4j:keepAlive beanName="validation" />
+	
+		<h1>Otp</h1>
+		<p>
+			Si la validation passe (longueur entre 2 et 8), l'otpPanel affichera ses enfants, même en cas de valitation ajax (sur le <b>onBlur</b>).
+		</p>
+		<p>
+			Ce composant à besoin de passer à la fois par la phase de décodage (APPLY_REQUEST_VALUE) 
+			pour écouter le <b>ValueChangeEvent</b> de l'input cible et celle de rendu (RENDER_RESPONSE) pour supprimer le listener.
+			C'est pourquoi il faut passer l'id de l'<i>otpPanel</i> à l'attribut 'process' du <i>a4j:support</i>.
+		</p>
+
+		<a4j:form>
+		
+			<h:inputText id="text" value="#{validation.text}"
+						 valueChangeListener="#{validation.onTextChange}">
+				<f:validateLength minimum="2" maximum="8" />
+				<a4j:support event="onchange" reRender="otherPanel, text" ajaxSingle="true" process="otpPanel" />
+			</h:inputText>
+			<br/>
+			<rich:message for="text"/>
+
+			<h:commandLink action="#{debug.emptyAction}" value="action!" />
+			
+			<hr/>
+			
+			 <a4j:outputPanel id="otherPanel">
+				 <az:otpPanel id="otpPanel" forComponent="text">
+				 	<h:outputText value="La valeur a changé !" />
+				 	<f:facet name="cancel">
+				 		<h:commandLink value="Annuler" />
+				 	</f:facet>
+				 </az:otpPanel>
+			 </a4j:outputPanel>
+		</a4j:form>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

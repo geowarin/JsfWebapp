@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE facelet-taglib PUBLIC
+  "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+  "facelet-taglib_1_0.dtd">
+<facelet-taglib>
+	<namespace>http://com.aziphael/facelets/components</namespace>
+
+	<!-- Ici on veut pouvir redéfinir le composant jsf (cf: faces-config-coponents.xml) tout en laissant à facelets 
+		le soin de mapper automatiquement le tag -->
+	<tag>
+		<tag-name>otp</tag-name>
+		<component>
+			<component-type>com.aziphael.jsf.Otp</component-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>otpPanel</tag-name>
+		<component>
+			<component-type>com.aziphael.jsf.OtpPanel</component-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>messageInterceptor</tag-name>
+		<component>
+			<component-type>com.aziphael.jsf.MessageInterceptor</component-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>parametrizedValidator</tag-name>
+		<validator>
+			<validator-id>com.aziphael.validator.ParametrizedValidator</validator-id>
+		</validator>
+	</tag>
+
+</facelet-taglib>

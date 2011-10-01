@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:az="http://com.aziphael/facelets/components">
+
+<ui:composition template="/layout/default.xhtml">
+
+	<ui:define name="title">Validation</ui:define>
+	<ui:define name="body">
+	
+		<!--
+		 <f:phaseListener type="com.aziphael.webapp.listener.ComponentTreePrinterPhaseListener"/>
+		 -->
+		 <az:messageInterceptor id="interceptor" />
+
+		<h1>Validation</h1>
+		<p>
+			<h:outputText value="#{msg.validation_welcome}" />
+		</p>
+		<p>
+			Un composant message interceptor est présent sur cette page pour tagger les facesMessages à la volée
+		</p>
+		<h:panelGroup rendered="#{utilBean.facesMessagePresent}">
+			<hr/>
+			<p>
+				<h:messages globalOnly="false" infoClass="infoMessage" errorClass="errorMessage" showSummary="true" showDetail="false" />
+			</p>
+			<hr/>
+		</h:panelGroup>
+
+		<a4j:form prependId="false">
+			<p>
+				Si vous tapez plus de 3 caractères dans ce champ, une erreur de validation se déclenchera sur le onBlur.<br />
+				Il faut utiliser rich:message pour gérer ce cas.<br />
+			</p>
+				<h:inputText id="text" value="#{validation.text}"
+							 valueChangeListener="#{validation.onTextChange}">
+					<f:validateLength maximum="3" />
+					<a4j:support event="onblur" reRender="interceptor"></a4j:support>
+				</h:inputText>
+			<br/>
+			<rich:message for="text"/>
+			<p>
+				<h:commandLink action="#{validation.action}" value="action!" />
+			</p>
+		</a4j:form>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

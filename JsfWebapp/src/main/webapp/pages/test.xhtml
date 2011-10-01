@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition>
+	
+		<!-- 
+		<f:phaseListener type="com.aziphael.webapp.listener.TestPhaseListener"/>
+		<f:phaseListener type="com.aziphael.webapp.listener.ComponentTreePrinterPhaseListener"/>
+		<f:phaseListener type="com.aziphael.webapp.listener.PostRedirectGetListener"/>
+		 -->
+
+		<h:form id="form1">
+			<h:inputText id="text" value="#{debug.text}" valueChangeListener="#{debug.valueChanged}" validator="#{debug.validate}">
+				<f:validateLength maximum="10" />
+				<!-- 
+				<rich:ajaxValidator event="onblur" />
+				 -->
+			</h:inputText>
+			
+			<h:commandButton id="redirect" value="redirect" actionListener="#{debug.actionLaunched}" action="#{debug.redirectAction}" />
+			<h:commandButton id="noredirect" value="no redirect" actionListener="#{debug.actionLaunched}" action="#{debug.noredirectAction}" />
+			<h:commandButton id="custom" value="custom redirect" actionListener="#{debug.listenerRedirecter}" />
+			<h:message for="text"/>
+		</h:form>
+	</ui:composition>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:loadBundle basename="messages" var="msg" />
+<head>
+<title><ui:insert name="title">Page Title</ui:insert>
+</title>
+	<a4j:loadStyle src="/resources/css/default.css"></a4j:loadStyle>
+	<a4j:loadScript src="resource://jquery.js"/>
+</head>
+
+<body>
+	<div id="container">
+		<div id="top">
+			<ui:insert name="pageHeader"><h1>JSF Webapp</h1></ui:insert>
+		</div>
+		
+		<div id="leftnav">
+			<ui:include src="/layout/default-menu.xhtml" />
+		</div>
+		
+		<div id="content">
+			<ui:insert name="body">Page Body</ui:insert>
+		</div>
+
+		<div id="footer">
+			<h:outputLink value="/JsfWebapp">
+				<h:outputText value=" Retour Index" />
+			</h:outputLink>
+		</div>
+	</div>
+	
+</body>
+
+</html>

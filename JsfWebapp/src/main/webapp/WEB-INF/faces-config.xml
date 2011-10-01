@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<application>
+		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+		<message-bundle>messages</message-bundle>
+	</application>
+	<factory>
+		<lifecycle-factory>com.aziphael.webapp.jsf.lifecycle.CustomLifecycleFactory</lifecycle-factory>
+	</factory>
+	<lifecycle>
+		<phase-listener>com.aziphael.webapp.listener.DebugPhaseListener</phase-listener>
+		<phase-listener>com.aziphael.webapp.listener.ViewScopedPhaseListener</phase-listener>
+		<!-- <phase-listener>net.sf.jsfcomp.onload.OnLoadPhaseListener</phase-listener> -->
+	</lifecycle>
+
+	<validator>
+		<validator-id>com.aziphael.validator.ParametrizedValidator</validator-id>
+		<validator-class>com.aziphael.webapp.components.validator.ParametrizedValidator</validator-class>
+	</validator>
+</faces-config>
