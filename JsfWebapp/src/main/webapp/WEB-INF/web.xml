@@ -5,7 +5,8 @@
  <display-name>JsfWebapp</display-name>
  <context-param>
   <param-name>facelets.LIBRARIES</param-name>
-  <param-value>/WEB-INF/facelets/components.taglib.xml</param-value>
+  <param-value>/WEB-INF/facelets/components.taglib.xml;
+  				/WEB-INF/facelets/accordion/accordion.taglib.xml</param-value>
  </context-param>
  <context-param>
   <param-name>facelets.SKIP_COMMENTS</param-name>

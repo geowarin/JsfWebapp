@@ -23,19 +23,20 @@ public class ComponentTreePrinterPhaseListener implements PhaseListener {
 
 	@Override
 	public void afterPhase(PhaseEvent arg0) {
+		log.info("---------------------");
+		printComponent(0, FacesContext.getCurrentInstance().getViewRoot());
+		log.info("---------------------");
 	}
 
 	@Override
 	public void beforePhase(PhaseEvent arg0) {
 
-		log.info("---------------------");
-		final long start = System.nanoTime();
-		printComponent(0, FacesContext.getCurrentInstance().getViewRoot());
-		log.info("took " + (System.nanoTime() - start) + " nanos");
-		log.info("---------------------");
-		log.info("print2 :");
-		print2();
-		log.info("---------------------");
+//		log.info("---------------------");
+//		printComponent(0, FacesContext.getCurrentInstance().getViewRoot());
+//		log.info("---------------------");
+//		log.info("print2 :");
+//		print2();
+//		log.info("---------------------");
 	}
 
 	private void printComponent(int depth, UIComponent component) {
@@ -89,6 +90,8 @@ public class ComponentTreePrinterPhaseListener implements PhaseListener {
 
 	private void logComponent(int depth, UIComponent component) {
 
+		if ("UIInstructions".equals(component.getClass().getSimpleName()))
+			return;
 		final StringBuilder builder = new StringBuilder(StringUtils.repeat("\t", depth));
 		if (depth > 0)
 			builder.append(" -> ");

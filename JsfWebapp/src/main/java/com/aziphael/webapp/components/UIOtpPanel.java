@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 import javax.faces.component.UICommand;
 import javax.faces.component.UIComponent;
-import javax.faces.component.UIComponentBase;
 import javax.faces.component.UIInput;
 import javax.faces.component.html.HtmlInputText;
 import javax.faces.context.FacesContext;
@@ -15,13 +14,14 @@ import javax.faces.event.ActionListener;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.event.ValueChangeListener;
 
+import org.ajax4jsf.component.html.HtmlAjaxOutputPanel;
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.aziphael.webapp.jsf.ComponentUtils;
 
-public class UIOtpPanel extends UIComponentBase implements ValueChangeListener, ActionListener, Serializable {
+public class UIOtpPanel extends HtmlAjaxOutputPanel implements ValueChangeListener, ActionListener, Serializable {
 
 	private static final String OTP_SESSION_PARAM = "OTP_VALUE_FOR_";
 	private static final long serialVersionUID = 1L;

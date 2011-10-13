@@ -31,5 +31,16 @@
 			<validator-id>com.aziphael.validator.ParametrizedValidator</validator-id>
 		</validator>
 	</tag>
+	
+	<tag>
+		<tag-name>eventSource</tag-name>
+		<component>
+			<component-type>com.aziphael.jsf.EventSource</component-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>eventSourceTag</tag-name>
+		<handler-class>com.aziphael.webapp.components.tags.EventSourceTagHandler</handler-class>
+	</tag>
 
 </facelet-taglib>

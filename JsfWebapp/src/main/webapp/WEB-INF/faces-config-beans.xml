@@ -27,4 +27,9 @@
   <managed-bean-class>com.aziphael.webapp.bean.DynaValidBean</managed-bean-class>
   <managed-bean-scope>request</managed-bean-scope>
  </managed-bean>
+ <managed-bean>
+  <managed-bean-name>accordionBean</managed-bean-name>
+  <managed-bean-class>com.aziphael.webapp.bean.AccordionBean</managed-bean-class>
+  <managed-bean-scope>request</managed-bean-scope>
+ </managed-bean>
 </faces-config>

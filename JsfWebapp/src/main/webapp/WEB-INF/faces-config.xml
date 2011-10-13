@@ -11,8 +11,9 @@
 	</factory>
 	<lifecycle>
 		<phase-listener>com.aziphael.webapp.listener.DebugPhaseListener</phase-listener>
-		<phase-listener>com.aziphael.webapp.listener.ViewScopedPhaseListener</phase-listener>
+<!-- 		<phase-listener>com.aziphael.webapp.listener.ViewScopedPhaseListener</phase-listener> -->
 		<!-- <phase-listener>net.sf.jsfcomp.onload.OnLoadPhaseListener</phase-listener> -->
+<!-- 		<phase-listener>com.aziphael.webapp.listener.ComponentTreePrinterPhaseListener</phase-listener> -->
 	</lifecycle>
 
 	<validator>

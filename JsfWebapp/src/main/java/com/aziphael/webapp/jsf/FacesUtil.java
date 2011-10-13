@@ -21,6 +21,15 @@ import javax.servlet.http.HttpSession;
 
 public class FacesUtil {
 
+	public static String debugComponent(UIComponent component) {
+		final StringBuilder builder = new StringBuilder();
+		builder.append("[");
+		builder.append(component.getClass().getSimpleName());
+		builder.append(" - ");
+		builder.append(component.getClientId(FacesContext.getCurrentInstance()));
+		builder.append("]");
+		return builder.toString();
+	}
 
 	/**
 	 * Other Servlets than the FacesServlet and all Filters cannot directly access the FacesContext in the same web container, 
@@ -90,6 +99,18 @@ public class FacesUtil {
 		
 		return null;
 	}
+	
+	public static <T extends UIComponent> T getParentByType(UIComponent root, Class<T> componentType) {
+
+		UIComponent parent = root;
+		do {
+			parent = parent.getParent();
+			if (componentType.isInstance(parent))
+				return (T) parent;
+		} while (parent != null);
+		
+		return null;
+	}
 
 	public static StringBuilder printAttributes(UIComponent component) {
 
@@ -103,15 +124,6 @@ public class FacesUtil {
 		builder.append("}");
 		return builder;
 	}
-
-
-	// public static FacesMessage getFacesMessage(String name) {
-	// final FacesContext facesContext = FacesContext.getCurrentInstance();
-	// final ResourceBundle bundle =
-	// facesContext.getApplication().getResourceBundle(facesContext, name);
-	// final String summary = bundle.getString(key);
-	// }
-	//
 
 	public static HttpServletRequest getRequest() {
 		return (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();

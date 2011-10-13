@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE facelet-taglib PUBLIC
+  "-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN"
+  "facelet-taglib_1_0.dtd">
+<facelet-taglib>
+	<namespace>http://com.aziphael/facelets/accordion</namespace>
+
+	<tag>
+		<tag-name>accordion</tag-name>
+		<source>accordion.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>accordionHandler</tag-name>
+		<handler-class>com.aziphael.webapp.components.accordion.AccordionHandler</handler-class>
+	</tag>
+	<tag>
+		<tag-name>uiAccordion</tag-name>
+		<component>
+			<component-type>com.aziphael.jsf.accordion.Accordion</component-type>
+		</component>
+	</tag>
+	
+	<tag>
+		<tag-name>uiAccordionTab</tag-name>
+		<component>
+			<component-type>com.aziphael.jsf.accordion.AccordionTab</component-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>accordionTab</tag-name>
+		<source>accordionTab.xhtml</source>
+	</tag>
+	<tag>
+		<tag-name>accordionTabHandler</tag-name>
+		<handler-class>com.aziphael.webapp.components.accordion.AccordionTabHandler</handler-class>
+	</tag>
+	
+	<tag>
+		<tag-name>accordionAction</tag-name>
+		<handler-class>com.aziphael.webapp.components.accordion.AccordionTabHandler</handler-class>
+	</tag>
+
+
+</facelet-taglib>

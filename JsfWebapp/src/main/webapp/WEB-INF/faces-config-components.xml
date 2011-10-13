@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
- xmlns:xi="http://www.w3.org/2001/XInclude"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
- <component>
-  <component-type>com.aziphael.jsf.OtpPanel</component-type>
-  <component-class>com.aziphael.webapp.components.UIOtpPanel</component-class>
- </component>
- <component>
-  <component-type>com.aziphael.jsf.MessageInterceptor</component-type>
-  <component-class>com.aziphael.webapp.components.MessageInterceptor</component-class>
- </component>
- <!-- <render-kit> <renderer> <component-family>family</component-family> 
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<component>
+		<component-type>com.aziphael.jsf.OtpPanel</component-type>
+		<component-class>com.aziphael.webapp.components.UIOtpPanel</component-class>
+	</component>
+	<component>
+		<component-type>com.aziphael.jsf.MessageInterceptor</component-type>
+		<component-class>com.aziphael.webapp.components.MessageInterceptor</component-class>
+	</component>
+	<component>
+		<component-type>com.aziphael.jsf.EventSource</component-type>
+		<component-class>com.aziphael.webapp.components.UIEventSource</component-class>
+	</component>
+	<!-- <render-kit> <renderer> <component-family>family</component-family> 
 		<renderer-type>com.aziphael.jsf.renderer.CompRenderer</renderer-type> <renderer-class>com.aziphael.webapp.components.renderer.CompRenderer</renderer-class> 
 		</renderer> </render-kit> -->
+		
+	<component>
+		<component-type>com.aziphael.jsf.accordion.Accordion</component-type>
+		<component-class>com.aziphael.webapp.components.accordion.UIAccordion</component-class>
+	</component>
+	<component>
+		<component-type>com.aziphael.jsf.accordion.AccordionTab</component-type>
+		<component-class>com.aziphael.webapp.components.accordion.UIAccordionTab</component-class>
+	</component>
 </faces-config>
