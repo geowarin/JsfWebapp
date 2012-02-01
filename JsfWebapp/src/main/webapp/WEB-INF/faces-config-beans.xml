@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <faces-config version="1.2" xmlns="http://java.sun.com/xml/ns/javaee"
- xmlns:xi="http://www.w3.org/2001/XInclude"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
- <managed-bean>
-  <managed-bean-name>debug</managed-bean-name>
-  <managed-bean-class>com.aziphael.webapp.bean.DebugBean</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>validation</managed-bean-name>
-  <managed-bean-class>com.aziphael.webapp.bean.ValidationBean</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>viewScopedBean</managed-bean-name>
-  <managed-bean-class>com.aziphael.webapp.bean.ViewScopedBean</managed-bean-class>
-  <managed-bean-scope>session</managed-bean-scope>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>utilBean</managed-bean-name>
-  <managed-bean-class>com.aziphael.webapp.bean.UtilBean</managed-bean-class>
-  <managed-bean-scope>application</managed-bean-scope>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>dynaValidBean</managed-bean-name>
-  <managed-bean-class>com.aziphael.webapp.bean.DynaValidBean</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>accordionBean</managed-bean-name>
-  <managed-bean-class>com.aziphael.webapp.bean.AccordionBean</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
- </managed-bean>
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<managed-bean>
+		<managed-bean-name>debug</managed-bean-name>
+		<managed-bean-class>com.aziphael.webapp.bean.DebugBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>validation</managed-bean-name>
+		<managed-bean-class>com.aziphael.webapp.bean.ValidationBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>viewScopedBean</managed-bean-name>
+		<managed-bean-class>com.aziphael.webapp.bean.ViewScopedBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>utilBean</managed-bean-name>
+		<managed-bean-class>com.aziphael.webapp.bean.UtilBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>dynaValidBean</managed-bean-name>
+		<managed-bean-class>com.aziphael.webapp.bean.DynaValidBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>accordionBean</managed-bean-name>
+		<managed-bean-class>com.aziphael.webapp.bean.AccordionBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>testBean</managed-bean-name>
+		<managed-bean-class>com.aziphael.webapp.bean.TestBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>scrollBean</managed-bean-name>
+		<managed-bean-class>com.aziphael.webapp.bean.ScrollBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
 </faces-config>

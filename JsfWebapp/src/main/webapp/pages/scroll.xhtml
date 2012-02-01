@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jstl/core"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+	<ui:composition template="/layout/default.xhtml">
+	
+		<ui:define name="body">
+		
+			<a4j:keepAlive beanName="scrollBean" />
+			<a4j:loadScript src="/resources/js/scroller.js"></a4j:loadScript>
+		
+			<h:form id="form1" prependId="false">
+				<h:panelGroup id="scrollContainer" layout="block" style="overflow-y: scroll; width:600px; height: 200px">
+					<h:panelGroup id="theContents" layout="block" style="width:600px; height: 200px">
+					
+						<a4j:include id="initialInclude" viewId="/contents/contents.xhtml"></a4j:include>
+
+						<c:forEach items="#{scrollBean.urlsToLoad}" var="url" varStatus="status">
+							<a4j:include id="include_#{status.index}" viewId="#{url}"></a4j:include>
+						</c:forEach>
+						
+					</h:panelGroup>
+				</h:panelGroup>
+				
+				<a4j:jsFunction name="addUrlToPanel" action="#{scrollBean.addUrlToLoad}" reRender="theContents" oncomplete="window['scrolledToEnd'] = false">
+					<f:param name="url" />
+				</a4j:jsFunction>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</html>
